@@ -81,15 +81,18 @@ function init()
   scene.add(light);
 
   // add grid
-  var gridxz = new THREE.GridHelper(edge,edge*.1);
-  gridxz.setColors(new THREE.Color(0x006600), new THREE.Color(0x006600));
+  var gridxz = new THREE.GridHelper(edge,edge*.1);          //size, step
+  gridxz.setColors(
+    new THREE.Color(0x006600),                              //chill green
+    new THREE.Color(0x006600)
+  );
   gridxz.position.set(0,0,0);
   scene.add(gridxz);
 
   // add y axis
   var lineGeometry = new THREE.Geometry();
   var vertArray = lineGeometry.vertices;
-  vertArray.push( new THREE.Vector3(0, -500, 0), new THREE.Vector3(0, 500, 0) );
+  vertArray.push( new THREE.Vector3(0, -edge, 0), new THREE.Vector3(0, edge, 0) );
   lineGeometry.computeLineDistances();
   var lineMaterial = new THREE.LineDashedMaterial( { color: 0x0000cc, dashSize: 1, gapSize: 3 } );
   var line = new THREE.Line( lineGeometry, lineMaterial );
