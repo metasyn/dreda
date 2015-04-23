@@ -5,9 +5,8 @@ or, dimensionality reduced exploratory data analysis
 
 Explore high dimensionality data via reduction and exploration in Three.js
 
-## Who
+## Authors 
 
-* Zachary Stenger
 * Xander Johnson
 
 ## License
