@@ -3,24 +3,40 @@
   <head>
     <title>dreda</title>
 
-    <!--ui stuff-->
-    <script src="./js/main.js"></script>
-
     <!--styles-->
-    <link rel="stylesheet" type="text/css"  href="./css/stylish.css">
-
+    <link rel="stylesheet" type="text/css" href="./css/stylish.css">
+    <link rel="stylesheet" type="text/css" href="./Semantic-UI-1.12.0/dist/semantic.min.css">
+    
     <!--dependencies-->
     <script src="./lib/three.min.js"></script>
     <script src="./lib/OrbitControls.js"></script> 
     <script src="./lib/rAF.js"></script>
     <script src="./lib/jquery-2.1.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="./Semantic-UI-1.12.0/dist/semantic.min.js"></script>
+    
   </head>
 
   <body>
-    <div id="side">
-    </div>
-
+    <i class="big white expand icon plus"></i>
+      <div class="ui wide sidebar">
+        <div class="side">
+          <i class="big collapse icon minus"></i>
+          <div class="sidediv">
+            <br><br>
+            <div class="ui huge ribbon label teal">DREDA</div>
+              <h2>dimensionality reduced exploratory data analysis</h2>
+            <br><br>
+            <div class="ui huge ribbon label red">What</div>
+              <h3>lorem ipsum</h3>
+            <div class="ui huge ribbon label blue">Who</div>
+              <h3>Alexander Johnson</h3>
+              <h3>check it out on <a href="http://github.com/metasyn/dredagroup/dreda">github</a></h3>
+            </div>
+         </div>
+       </div>
+       
+    <div class=pusher>
     <canvas id="data-canvas">
     </canvas>
 
@@ -179,6 +195,20 @@ canvas.width  = canvas.clientWidth;
   camera.updateProjectionMatrix();
 });
 
+// click listener
+
+$('.plus').click(function(){
+  $('.ui.sidebar').sidebar('toggle');
+  $('.plus').hide();
+  $('.minus').show();
+  });
+
+$('.minus').click(function(){
+  $('.ui.sidebar').sidebar('toggle');
+  $('.minus').hide();
+  $('.plus').show();
+  });
+
 ////////
 ////////
 // DATA PROCESSING
@@ -211,8 +241,7 @@ function plotData(){
   }
 }
 
-
-
 </script>
+  </div> <!--PUSHER (Semantic Sidebar) -->
 </body>
 </html>
