@@ -33,7 +33,7 @@ var z_values = new Array();
 var cid_values = new Array();
 
 // colors (rainbow husl, 30 shades)
-colors = 
+colors = _.shuffle( 
 ['#f68870',
  '#f76773',
  '#f33279',
@@ -63,7 +63,7 @@ colors =
  '#f4e35f',
  '#f5cc65',
  '#f5b769',
- '#f6a26d'];
+ '#f6a26d']);
 
 // analytics area size
 var edge = 500;
@@ -178,7 +178,7 @@ function addSphere(x,y,z,c){
   scene.add(sphere);
 }
 
-function plotData(data){
+function plotData(){
   loadData();
   // TODO Trigger Loading Animation
   for (var i=0; i < x_values.length; i++){
@@ -186,6 +186,9 @@ function plotData(data){
   }
 }
 
+
+
 </script>
+
 </body>
 </html>
