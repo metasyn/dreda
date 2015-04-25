@@ -196,7 +196,7 @@ canvas.width  = canvas.clientWidth;
 
 // click listener
 
-$('.content.icon').click(function(){
+$('.content.icon, .pusher').click(function(){
   if ($('.ui.sidebar').sidebar('is hidden')){
     $('.content.icon').removeClass('white');
     $('.content.icon').addClass('black');
@@ -207,6 +207,7 @@ $('.content.icon').click(function(){
   }
   $('.ui.sidebar').sidebar('toggle');
   });
+
 
 ////////
 ////////
