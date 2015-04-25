@@ -3,6 +3,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	z-index: 1;
 }
 
 body{
@@ -15,18 +16,21 @@ h1{
 }
 
 .side{
+	top: .5em;
 	height: 100%;
 	background-color: #B2FFFF;
 }
 
 .sidediv {
+	top: .5em;
 	padding-left: 40px;
 }
 
-.expand, .collapseicon {
+
+.content {
 	position:  absolute;
 	top: .5em;
 	left: .5em;
-	z-index: 100;
+	z-index: 10;
 
 }

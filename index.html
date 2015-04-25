@@ -18,12 +18,11 @@
   </head>
 
   <body>
-    <i class="big white expand icon plus"></i>
+    <i class="big white content icon"></i>
       <div class="ui wide sidebar">
         <div class="side">
-          <i class="big collapse icon minus"></i>
           <div class="sidediv">
-            <br><br>
+            <br><br><br>
             <div class="ui huge ribbon label teal">DREDA</div>
               <h2>dimensionality reduced exploratory data analysis</h2>
             <br><br>
@@ -197,16 +196,16 @@ canvas.width  = canvas.clientWidth;
 
 // click listener
 
-$('.plus').click(function(){
+$('.content.icon').click(function(){
+  if ($('.ui.sidebar').sidebar('is hidden')){
+    $('.content.icon').removeClass('white');
+    $('.content.icon').addClass('black');
+  }
+  if ($('.ui.sidebar').sidebar('is visible')){
+    $('.content.icon').removeClass('black');
+    $('.content.icon').addClass('white');
+  }
   $('.ui.sidebar').sidebar('toggle');
-  $('.plus').hide();
-  $('.minus').show();
-  });
-
-$('.minus').click(function(){
-  $('.ui.sidebar').sidebar('toggle');
-  $('.minus').hide();
-  $('.plus').show();
   });
 
 ////////
