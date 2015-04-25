@@ -18,7 +18,6 @@
   </head>
 
   <body>
-    <i class="big white content icon"></i>
       <div class="ui wide sidebar">
         <div class="side">
           <div class="sidediv">
@@ -34,7 +33,7 @@
             </div>
          </div>
        </div>
-       
+    <i class="fixed big white content icon"></i>
     <div class=pusher>
     <canvas id="data-canvas">
     </canvas>
@@ -195,19 +194,9 @@ canvas.width  = canvas.clientWidth;
 });
 
 // click listener
-
-$('.content.icon, .pusher').click(function(){
-  if ($('.ui.sidebar').sidebar('is hidden')){
-    $('.content.icon').removeClass('white');
-    $('.content.icon').addClass('black');
-  }
-  if ($('.ui.sidebar').sidebar('is visible')){
-    $('.content.icon').removeClass('black');
-    $('.content.icon').addClass('white');
-  }
-  $('.ui.sidebar').sidebar('toggle');
+$('.content.icon').click(function(){
+    $('.ui.sidebar').sidebar('toggle');
   });
-
 
 ////////
 ////////
