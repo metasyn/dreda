@@ -156,7 +156,7 @@ var lineGeometry = new THREE.Geometry();
 var vertArray = lineGeometry.vertices;
 vertArray.push( new THREE.Vector3(0, -edge, 0), new THREE.Vector3(0, edge, 0) );
 lineGeometry.computeLineDistances();
-var lineMaterial = new THREE.LineDashedMaterial( { color: 0x0000cc, dashSize: 1, gapSize: 3 } );
+var lineMaterial = new THREE.LineDashedMaterial( { color: 0xffffff, dashSize: 1, gapSize: 3 } );
 var line = new THREE.Line( lineGeometry, lineMaterial );
 scene.add(line);
 
@@ -197,7 +197,7 @@ canvas.width  = canvas.clientWidth;
 $('.content.icon').click(function(){
     $('.ui.sidebar').sidebar('toggle');
   });
-
+  
 ////////
 ////////
 // DATA PROCESSING
