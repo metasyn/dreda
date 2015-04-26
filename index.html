@@ -224,6 +224,10 @@ function plotData(){
 
     // loop through points
     for (var j=0; j < grouped[i].length; j++){
+
+      // update console
+      console.log(grouped[i].length + " points in cluster " + i)
+
       var vertex = new THREE.Vector3();
       vertex.x = grouped[i][j].x; 
       vertex.y = grouped[i][j].y; 
