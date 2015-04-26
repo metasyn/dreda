@@ -2,5 +2,7 @@
 *.swp
 
 # OSX
-.DS_Store
+*.DS_Store
 
+# iPython
+*.ipynb.check*

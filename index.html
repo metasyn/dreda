@@ -243,7 +243,7 @@ function plotData(){
     pointGeometry.colors = pointColors
 
     // create new point cloud
-    var pointCloudMaterial= new THREE.PointCloudMaterial({size: edge*.02, color: colors[i], vertexColors: THREE.VertexColors, alphaTest: 0.5, transparent: true, map: sprite});
+    var pointCloudMaterial= new THREE.PointCloudMaterial({size: edge*.05, color: colors[i], vertexColors: THREE.VertexColors, alphaTest: 0.5, transparent: true, map: sprite});
     
     // Use this to change the entire material 
     //point_cloud_mesh.color.setHSL( 1.0, 0.2, 0.7 );
