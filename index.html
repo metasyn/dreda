@@ -53,10 +53,7 @@ var canvas = document.getElementById('data-canvas')
 
 // custom globals
 var data;
-var x_values = new Array();
-var y_values = new Array();
-var z_values = new Array();
-var cid_values = new Array();
+var organized = [];
 
 // colors (rainbow husl, 30 shades)
 colors = _.shuffle( 
@@ -207,27 +204,50 @@ $('.content.icon').click(function(){
 function loadData(){
   // Wow I love Underscore.js
   for (var i=0; i < _.size(_.values(data)[0]); i++){
-    x_values.push(data.x[i]);
-    y_values.push(data.y[i]);
-    z_values.push(data.z[i]); 
-    cid_values.push(data.cid[i]);
+    organized.push({x: data.x[i], y: data.y[i], z: data.z[i], cid: data.cid[i]})
   }
-}
-
-function addSphere(x,y,z,c){
-  var geometry = new THREE.SphereGeometry(edge/100,32,32);
-  var material= new THREE.MeshBasicMaterial({color: c});
-  var sphere = new THREE.Mesh(geometry, material);
-  sphere.position.set(x,y,z) 
-  scene.add(sphere);
 }
 
 function plotData(){
   loadData();
-  // TODO Trigger Loading Animation
-  for (var i=0; i < x_values.length; i++){
-    addSphere(x_values[i], y_values[i], z_values[i], colors[cid_values[i]] )
+  console.log("Data Loaded");
+  // zip and group
+  var grouped = _.groupBy(organized, 'cid') // cid = 3 now
+  var groupedSize = _.size(grouped);
+  
+  for (var i=0; i<groupedSize; i++){
+
+    console.log("group  " + i);
+    // create new point cloud material
+    var pointGeometry = new THREE.Geometry();
+    pointColors = [];
+
+    // loop through points
+    for (var j=0; j < grouped[i].length; j++){
+      var vertex = new THREE.Vector3();
+      vertex.x = grouped[i][j].x; 
+      vertex.y = grouped[i][j].y; 
+      vertex.z = grouped[i][j].z;
+      pointGeometry.vertices.push(vertex);
+      // assign colors
+      pointColors[j] = new THREE.Color(colors[i]);
+      //pointColors[j].setHSL( ( vertex.x + 1000 ) / 2000, 0.5, 0.5 );
+    }
+    
+    pointGeometry.colors = pointColors
+
+    // create new point cloud
+    var pointCloudMaterial= new THREE.PointCloudMaterial({size: edge*.02, color: colors[i], vertexColors: THREE.VertexColors, alphaTest: 0.5, transparent: true});
+    
+    // Use this to change the entire material 
+    //point_cloud_mesh.color.setHSL( 1.0, 0.2, 0.7 );
+
+    var pointCloud= new THREE.PointCloud(pointGeometry, pointCloudMaterial)
+    scene.add(pointCloud)
+    console.log(_.size(grouped))
+    console.log(colors[i])
   }
+  return "Finished Plotting"
 }
 
 </script>
