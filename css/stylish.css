@@ -27,7 +27,7 @@ h1{
 }
 
 
-.content {
+.content.icon  {
 	position:  absolute;
 	top: .5em;
 	left: .5em;
