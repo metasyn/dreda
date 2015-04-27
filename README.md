@@ -18,7 +18,20 @@ I had been doing some visualizations in iPython and they left much to be desired
 
 E.g.
 
-Object { Object x { 1: value1, 2: value2... n : value-n}, Object y { 1: value1 ... } }
+Object { 
+  Object x { 
+    1: value1, 
+    2: value2, 
+    n : value-n
+  }, 
+  Object y { 
+    1: value1, 
+    2: value2, 
+    n : value-n
+  },
+  Object z...
+  Object c...
+}
 
 # How
 
