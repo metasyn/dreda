@@ -1,9 +1,6 @@
 # DREDA
 dimensionality reduced exploratory data analysis
 
-
-[![ScreenShot](https://rawgit.com/dredagroup/dreda/master/data/demo.webm)](https://rawgit.com/dredagroup/dreda/master/data/demo.webm)
-
 # What
 
 Explore high dimensionality data via reduction and exploration using Three.js
