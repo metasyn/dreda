@@ -1,41 +1,109 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dreda by dredagroup</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>Dreda by metasyn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Dreda</h1>
-        <p>dimensionality reduced exploratory data analysis</p>
+    <section class="page-header">
+      <h1 class="project-name">Dreda</h1>
+      <h2 class="project-tagline">dimensionality reduced exploratory data analysis</h2>
+      <a href="https://github.com/metasyn/dreda" class="btn">View on GitHub</a>
+      <a href="https://github.com/metasyn/dreda/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/metasyn/dreda/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/dredagroup/dreda">View the Project on GitHub <small>dredagroup/dreda</small></a></p>
+    <section class="main-content">
+      <h1>
+<a id="dreda" class="anchor" href="#dreda" aria-hidden="true"><span class="octicon octicon-link"></span></a>DREDA</h1>
 
+<p>dimensionality reduced exploratory data analysis</p>
 
-        <ul>
-          <li><a href="https://github.com/dredagroup/dreda/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dredagroup/dreda/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dredagroup/dreda">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/dredagroup">dredagroup</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>
+  
+Your browser does not support the video tag.
+</p>
+
+<h1>
+<a id="what" class="anchor" href="#what" aria-hidden="true"><span class="octicon octicon-link"></span></a>What</h1>
+
+<p>Explore high dimensionality data via reduction and exploration using Three.js</p>
+
+<h1>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why</h1>
+
+<p>Sometimes you have too many fields, features, columns... dimensions, to your data. </p>
+
+<p><a href="http://en.wikipedia.org/wiki/Dimensionality_reduction">Wikipedia</a>:</p>
+
+<blockquote>
+<p>In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration, and can be divided into feature selection and feature extraction.</p>
+</blockquote>
+
+<p>If you reduce your data down, say via <a href="http://en.wikipedia.org/wiki/Singular_value_decomposition">SVD</a> or <a href="http://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>, to three dimensions, you can visualize it with this tool. Currently Dreda supports 4 dimensions (x,y,z, and color). Color assignments are chosen randomly. </p>
+
+<p>I had been doing some visualizations in iPython and they left much to be desired. The data input here is just the ouput of a pandas data frame <code>to_json()</code> - a JSON object with an inner object for each column - index and value pairs in each inner object</p>
+
+<p>E.g.</p>
+
+<pre><code>{
+  "x":
+  {
+    "0":117.0501353217,
+    "1":63.4789054268,
+    "2":-92.4110611211
+  },
+  "y":
+    {
+      "0":-33.8277679817,
+      "1":120.3959209587,
+      "2":172.3790645372
+    },
+  "z":
+    {
+    "0":-17.441790351,
+    "1":-34.4737315608,
+    "2":-224.6172323059
+    },
+  "cid":
+    {
+      "0":4.0,
+      "1":1.0,
+      "2":4.0
+    }
+}
+</code></pre>
+
+<h1>
+<a id="how" class="anchor" href="#how" aria-hidden="true"><span class="octicon octicon-link"></span></a>How</h1>
+
+<p>Clone, run <code>python -m SimpleHTTPSever</code>, and open <code>localhost:8000</code> in your browser.<br>
+Open the console, and run the function <code>plotData()</code>. </p>
+
+<h2>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h2>
+
+<ul>
+<li>Xander Johnson</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/metasyn/dreda">Dreda</a> is maintained by <a href="https://github.com/metasyn">metasyn</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
+
