@@ -1,8 +1,8 @@
 # DREDA
 dimensionality reduced exploratory data analysis
 
-<video id='demo' src="http://rawgit.com/dredagroup/dreda/data/demo.webm" width="640" height="360" preload></video>
 
+[![ScreenShot](https://rawgit.com/dredagroup/dreda/master/data/demo.webm)](https://rawgit.com/dredagroup/dreda/master/data/demo.webm)
 
 # What
 
