@@ -132,7 +132,7 @@ renderer.render(scene,camera);
 
 // resize - listener
 
-canvas.addEventListener('resize', function () {
+window.addEventListener('resize', function () {
 canvas.width  = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
   renderer.setViewport(0, 0, canvas.clientWidth, canvas.clientHeight);
