@@ -48,7 +48,7 @@ E.g.
 # How
 
 Clone, run `python -m SimpleHTTPSever`, and open `localhost:8000` in your browser.  
-Open the console, and run the function `plotData()`. 
+Open the console, and run the function `plot()`. 
 
 ## Authors 
 
