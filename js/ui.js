@@ -12,3 +12,10 @@ function plot(){
   }, 1);
   $('#loader').addClass('ui active dimmer');
 }
+
+function togglePlot(){
+  setTimeout(function(){
+    plot();
+  }, 1);
+	$('.ui.sidebar').sidebar('toggle')
+}

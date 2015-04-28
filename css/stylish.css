@@ -37,3 +37,9 @@ h1{
 
 }
 
+#plotbutton {
+	display: inherit;
+	width: 200px;
+	margin-bottom: 25px;
+
+}
