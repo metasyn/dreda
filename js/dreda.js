@@ -149,10 +149,16 @@ canvas.width  = canvas.clientWidth;
 
 function fetchData(){
   // get the data
+  // although async: false generates a deprecated warning,
+  // we need the data to finish fetching file before loading
+  //
+  // TODO: Add .when / use deferred 
+  $.ajaxSetup({'async': false})
   $.getJSON('./data/sample_data.json', function(json){
     data = json 
     }
   )
+  console.log('Data Fetched');
 }
 
 function loadData(){
