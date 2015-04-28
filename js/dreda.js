@@ -155,10 +155,15 @@ canvas.width  = canvas.clientWidth;
 function loadData(){
   // Wow I love Underscore.js
   for (var i=0; i < _.size(_.values(data)[0]); i++){
-    organized.push({x: data.x[i], y: data.y[i], z: data.z[i], cid: data.cid[i]})
+    point = {};
+    for (p in data){
+      if (data.hasOwnProperty(p)){
+        point[p] = data[p][i]
+      }
+    }
+    organized.push(point);
   }
 }
-
 
 function plotData(){
 
