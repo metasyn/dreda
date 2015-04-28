@@ -112,11 +112,6 @@ var lineMaterial = new THREE.LineDashedMaterial( { color: 0xffffff, dashSize: 1,
 var line = new THREE.Line( lineGeometry, lineMaterial );
 scene.add(line);
 
-// get the data
-$.getJSON('./data/sample_data.json', function(json){
-  data = json 
-  }
-)
 }
 
 
@@ -152,9 +147,22 @@ canvas.width  = canvas.clientWidth;
 ///////
 ///////
 
+function fetchData(){
+  // get the data
+  $.getJSON('./data/sample_data.json', function(json){
+    data = json 
+    }
+  )
+}
+
 function loadData(){
+
+  fetchData();
+
   // Wow I love Underscore.js
-  for (var i=0; i < _.size(_.values(data)[0]); i++){
+  dataLength =  _.size(_.values(data)[0]);
+
+  for (var i=0; i < dataLength; i++){
     point = {};
     for (p in data){
       if (data.hasOwnProperty(p)){
