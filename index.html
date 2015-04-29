@@ -26,38 +26,47 @@
   <!-- LEFT SIDE BAR -->
   <div class="ui wide sidebar">
     <div class="side">
-      <div class="ui huge ribbon label teal">
-        DREDA
+      <div id="side-center">
+        <svg class="icon icon-table2"><use xlink:href="#icon-table2"></use></svg><svg class="icon icon-shrink"><use xlink:href="#icon-shrink"></use></svg><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg><svg class="icon icon-stats-dots"><use xlink:href="#icon-stats-dots"></use></svg>
+
+        <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
+
+        <div class="ui green button" onClick="togglePlot()">Plot Example</div>
+        <div class="ui teal button" onClick="">Tutorial</div>
+        <div class="ui blue button" onClick="toggleModal()">Upload</div>
+
+      </div>
+      
+
+      <div id="side-explanation">
+        <p>Dreda is a tool for exploring clustered data that has been reduced to three numerical dimensions. Often, <a href="http://en.wikipedia.org/wiki/Curse_of_dimensionality#The_.22curse_of_dimensionality.22_depends_on_the_algorithm">the curse of dimensionality</a> encourages one to use <a href="http://en.wikipedia.org/wiki/Dimensionality_reduction">dimensionality reduction</a> to turn high dimensional data into 3-dimensional data, a.k.a. data we can <strong>see</strong>!</p>
+
+      <p>
+        Dreda takes a JSON object of objects as input - its set to accept the default 'index' ouput from a <a href="http://pandas.pydata.org">pandas</a> DataFrame.<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_json.html">to_json()</a> function. The reasoning here is that pandas will allow you to make DataFrames based on SQL queries, CSVs, <a href="http://en.wikipedia.org/wiki/Hierarchical_Data_Format">HDF</a>, STATA, excel, as well as JSON from <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.json.read_json.html">read_json()</a> in a variety of ways.
+      </p>
+      <p>
+        Read more about Pandas IO <a href="http://pandas.pydata.org/pandas-docs/stable/io.html">here</a>.
+      </p>
+
+      </div>
+      <div class="ui divider"></div>
+
+      <div id="side-center">
+        <p>
+          More details about the project can be found <a href="http://metasyn.github.io/dreda">here</a>.<br>
+          Better yet, fork it and have some fun.
+        </p>
+        <a href="http://github.com/metasyn/dreda"><i class="massive github icon"></i></a>
       </div>
 
 
-      <h2>dimensionality reduced exploratory data analysis</h2>
 
-      <div id="plotbutton" class="ui green button" onClick="togglePlot()">Plot Data</div>
-      <div id="plotbutton" class="ui blue button" onClick="toggleModal()">Upload</div>
-
-      <div class="ui huge ribbon label red">
-        What
-      </div>
-
-
-      <h3><a href="http://metasyn.github.io/dreda">about</a></h3>
-
-
-      <div class="ui huge ribbon label blue">
-        Who
-      </div>
-
-
-      <h3>Xander Johnson</h3>
-
-
-      <h3>check it out the source on <a href="http://github.com/metasyn/dredagroup/dreda">github</a></h3>
     </div>
   </div>
+
+
   <i class="fixed big white content icon"></i>
 
-  
 
   <!-- RIGHT SIDE BAR -->
   <div id="info-box">
@@ -103,7 +112,7 @@
       </div>
     </div>
   </div>
-  <!-- MODAL -->
+
 
   <!--PUSHER -->
   <div class="pusher">
@@ -112,11 +121,37 @@
       <div class="ui large indeterminate loader"></div>
     </div>
   </div>
-  <!--PUSHER (Semantic Sidebar) -->
 
 
 
 
   <script src="./js/ui.js"></script> <script src="./js/dreda.js"></script>
+
+  <!--CUSTOM ICONS -->
+  <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-stats-dots" viewBox="0 0 1024 1024">
+        <title>stats-dots</title>
+          <path class="path1" d="M128 896h896v128h-1024v-1024h128zM288 832c-53.020 0-96-42.98-96-96s42.98-96 96-96c2.828 0 5.622 0.148 8.388 0.386l103.192-171.986c-9.84-15.070-15.58-33.062-15.58-52.402 0-53.020 42.98-96 96-96s96 42.98 96 96c0 19.342-5.74 37.332-15.58 52.402l103.192 171.986c2.766-0.238 5.56-0.386 8.388-0.386 2.136 0 4.248 0.094 6.35 0.23l170.356-298.122c-10.536-15.408-16.706-34.036-16.706-54.11 0-53.020 42.98-96 96-96s96 42.98 96 96c0 53.020-42.98 96-96 96-2.14 0-4.248-0.094-6.35-0.232l-170.356 298.124c10.536 15.406 16.706 34.036 16.706 54.11 0 53.020-42.98 96-96 96s-96-42.98-96-96c0-19.34 5.74-37.332 15.578-52.402l-103.19-171.984c-2.766 0.238-5.56 0.386-8.388 0.386s-5.622-0.146-8.388-0.386l-103.192 171.986c9.84 15.068 15.58 33.060 15.58 52.4 0 53.020-42.98 96-96 96z"></path>
+      </symbol>
+      <symbol id="icon-shrink" viewBox="0 0 1024 1024">
+        <title>shrink</title>
+        <path class="path1" d="M576 448h416l-160-160 192-192-96-96-192 192-160-160z"></path>
+        <path class="path2" d="M576 576v416l160-160 192 192 96-96-192-192 160-160z"></path>
+        <path class="path3" d="M448 575.996h-416l160 160-192 192 96 96 192-192 160 160z"></path>
+        <path class="path4" d="M448 448v-416l-160 160-192-192-96 96 192 192-160 160z"></path>
+      </symbol>
+      <symbol id="icon-arrow-right2" viewBox="0 0 1024 1024">
+        <title>arrow-right2</title>
+        <path class="path1" d="M621.254 877.254l320-320c24.994-24.992 24.994-65.516 0-90.51l-320-320c-24.994-24.992-65.516-24.992-90.51 0-24.994 24.994-24.994 65.516 0 90.51l210.746 210.746h-613.49c-35.346 0-64 28.654-64 64s28.654 64 64 64h613.49l-210.746 210.746c-12.496 12.496-18.744 28.876-18.744 45.254s6.248 32.758 18.744 45.254c24.994 24.994 65.516 24.994 90.51 0z"></path>
+      </symbol>
+      <symbol id="icon-table2" viewBox="0 0 1024 1024">
+        <title>table2</title>
+        <path class="path1" d="M0 64v896h1024v-896h-1024zM384 640v-192h256v192h-256zM640 704v192h-256v-192h256zM640 192v192h-256v-192h256zM320 192v192h-256v-192h256zM64 448h256v192h-256v-192zM704 448h256v192h-256v-192zM704 384v-192h256v192h-256zM64 704h256v192h-256v-192zM704 896v-192h256v192h-256z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
 </body>
+
 </html>
