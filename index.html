@@ -16,11 +16,14 @@
   <script src="./lib/OrbitControls.js"></script>
   <script src="./lib/rAF.js"></script>
   <script src="./lib/jquery-2.1.3.min.js"></script>
+
   <script src="./lib/lodash.min.js"></script> 
   <script src="./Semantic-UI-1.12.0/dist/semantic.min.js"></script>
 </head>
 
 <body>
+
+  <!-- LEFT SIDE BAR -->
   <div class="ui wide sidebar">
     <div class="side">
       <div class="ui huge ribbon label teal">
@@ -53,6 +56,29 @@
     </div>
   </div>
   <i class="fixed big white content icon"></i>
+
+  
+
+  <!-- RIGHT SIDE BAR -->
+  <div id="info-box">
+    <div class="ui inverted statistics">
+      <div class="ui green inverted statistic">
+        <div id="statsSize" class="value">
+        </div>
+        <div class="label">
+          Points Plotted
+        </div>
+      </div>
+      <div class="ui blue inverted statistic">
+        <div id="clusterSize" class="value">
+        </div>
+        <div class="label">
+          Clusters
+        </div>
+      </div>
+    </div>
+  </div>
+  <i class="fixed big white info icon"></i>
 
   <!-- MODAL -->
   <div class="ui modal">
@@ -87,6 +113,8 @@
     </div>
   </div>
   <!--PUSHER (Semantic Sidebar) -->
+
+
 
 
   <script src="./js/ui.js"></script> <script src="./js/dreda.js"></script>
