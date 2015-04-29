@@ -28,6 +28,7 @@
       <h2>dimensionality reduced exploratory data analysis</h2>
 
       <div id="plotbutton" class="ui green button" onClick="togglePlot()">Plot Data</div>
+      <div id="plotbutton" class="ui blue button" onClick="toggleModal()">Upload</div>
 
       <div class="ui huge ribbon label red">
         What
@@ -50,6 +51,32 @@
   </div>
   <i class="fixed big white content icon"></i>
 
+  <!-- MODAL -->
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Using your own data
+    </div>
+    <div class="content"> 
+      <div class="description">
+        <div class="ui header">Something About Uploading Your Own Data</div>
+        <video src="./data/demo.webm" controls width="480"></video>
+        <p>Or maybe you just want to see an example?</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black button">
+        Show me an example !
+      </div>
+      <div class="ui positive right labeled icon button">
+        Let me upload !
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL -->
+
+  <!--PUSHER -->
   <div class="pusher">
     <canvas id="data-canvas"></canvas>
     <div id="loader">
@@ -57,6 +84,8 @@
     </div>
   </div>
   <!--PUSHER (Semantic Sidebar) -->
+
+
   <script src="./js/ui.js"></script> <script src="./js/dreda.js"></script>
 </body>
 </html>

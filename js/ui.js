@@ -3,6 +3,13 @@ $('.content.icon').click(function(){
     $('.ui.sidebar').sidebar('toggle');
   });
 
+// modals
+function toggleModal(){
+  $('.ui.modal')
+    .modal('show')
+  ;
+}
+
 // add loaders
 
 function plot(){
