@@ -27,7 +27,8 @@ function togglePlot(){
   setTimeout(function(){
     plot();
   }, 1);
-	$('.ui.sidebar').sidebar('toggle')
+	$('.ui.sidebar').sidebar('toggle');
+  $('.ui.modal').modal('hide');
 }
 
 //// info box ////
@@ -44,6 +45,11 @@ $('.info.icon').click(function(){
 })
 
 function updateInfoBox(){
+  // total size
+  $('#statsSize').empty();
   $('#statsSize').append(_.size(organized));
+
+  // number clusters
+  $('#clusterSize').empty();
   $('#clusterSize').append(_.uniq(organized, Object.keys(data)[3]).length);
 }
