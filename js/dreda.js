@@ -54,8 +54,9 @@ var lineGapToEdgeRatio      = .002;
 var lineDashToEdgeRatio     = .006;
 
 // camera ratios
-var cameraYToEdgeRatio      = .3;
-var cameraZToEdgeRatio      = .8;
+var cameraYToEdgeRatio      = 1.1;
+var cameraZToEdgeRatio      = 1.1;
+var cameraXToEdgeRatio      = -1.1;
 
 // calls
 init();
@@ -81,7 +82,12 @@ function init(){
   var FAR = edge * 20;
   camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
   scene.add(camera);
-  camera.position.set(0, edge*cameraYToEdgeRatio, edge*cameraZToEdgeRatio);
+
+  // inital camera position is relativized to the overall scale
+  camera.position.set(
+    edge * cameraXToEdgeRatio,
+    edge * cameraYToEdgeRatio, 
+    edge * cameraZToEdgeRatio);
   camera.lookAt(scene.position);
 
   // create the renderer
