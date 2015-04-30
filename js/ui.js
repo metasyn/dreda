@@ -31,18 +31,21 @@ function togglePlot(){
   $('.ui.modal').modal('hide');
 }
 
+// popups
+
+$('#side-explanation a').popup({position: 'right center'})
+
+
 //// info box ////
 
-// aka glowing / pulsing info icon
+// aka glowing / pulsing effect
 $('.info.icon')
   .transition('set looping')
-  .transition('pulse', '2500ms')
-;
+  .transition('pulse', '1500ms');
 
 $('.info.icon').click(function(){
-  $('#info-box').toggleClass('hidden')
-  console.log('hi')
-})
+  $('#info-box').toggleClass('hidden');
+});
 
 function updateInfoBox(){
   // total size
@@ -53,3 +56,4 @@ function updateInfoBox(){
   $('#clusterSize').empty();
   $('#clusterSize').append(_.uniq(organized, Object.keys(data)[3]).length);
 }
+

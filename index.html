@@ -39,7 +39,25 @@
       
 
       <div id="side-explanation">
-        <p>Dreda is a tool for exploring clustered data that has been reduced to three numerical dimensions. Often, <a href="http://en.wikipedia.org/wiki/Curse_of_dimensionality#The_.22curse_of_dimensionality.22_depends_on_the_algorithm">the curse of dimensionality</a> encourages one to use <a href="http://en.wikipedia.org/wiki/Dimensionality_reduction">dimensionality reduction</a> to turn high dimensional data into 3-dimensional data, a.k.a. data we can <strong>see</strong>!</p>
+        <p>Dreda is a tool for exploring clustered data that has been reduced to three numerical dimensions. 
+
+          Often, 
+
+          <a href="http://en.wikipedia.org/wiki/Curse_of_dimensionality#The_.22curse_of_dimensionality.22_depends_on_the_algorithm" 
+          data-content="
+            The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces (often with hundreds or thousands of dimensions) that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience.">
+            the curse of dimensionality
+          </a> 
+
+          encourages one to use 
+
+          <a href="http://en.wikipedia.org/wiki/Dimensionality_reduction"
+          data-content="
+          In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration, and can be divided into feature selection and feature extraction.">
+            dimensionality reduction
+          </a>
+
+          to turn high dimensional data into 3-dimensional data, a.k.a. data we can <strong>see</strong>!</p>
 
       <p>
         Dreda takes a JSON object of objects as input - its set to accept the default 'index' ouput from a <a href="http://pandas.pydata.org">pandas</a> DataFrame.<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_json.html">to_json()</a> function. The reasoning here is that pandas will allow you to make DataFrames based on SQL queries, CSVs, <a href="http://en.wikipedia.org/wiki/Hierarchical_Data_Format">HDF</a>, STATA, excel, as well as JSON from <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.json.read_json.html">read_json()</a> in a variety of ways.
@@ -69,10 +87,11 @@
 
 
   <!-- RIGHT SIDE BAR -->
-  <div id="info-box">
+  <div id="info-box" class="hidden">
     <div class="ui inverted statistics">
       <div class="ui green inverted statistic">
         <div id="statsSize" class="value">
+          0
         </div>
         <div class="label">
           Points Plotted
@@ -80,14 +99,22 @@
       </div>
       <div class="ui blue inverted statistic">
         <div id="clusterSize" class="value">
+          0
         </div>
         <div class="label">
           Clusters
         </div>
       </div>
     </div>
+
+  <div class="ui inverted toggle checkbox">
+    <label id="rotateLabel">Rotate</label>
+    <input type="checkbox" name="rotateCheckbox" checked="checked" onClick="rotateToggle()">
+  </div>
+
   </div>
   <i class="fixed big white info icon"></i>
+
 
   <!-- MODAL -->
   <div class="ui modal">

@@ -100,6 +100,7 @@ function init(){
 
   // controls
   controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.autoRotate = true;
 
   // stats
   // TODO: Add Stats
@@ -187,7 +188,7 @@ function fetchData(){
   //
   // TODO: Add .when / use deferred 
   $.ajaxSetup({'async': false})
-  $.getJSON('./data/iris.json', function(json){
+  $.getJSON('./data/dp_data.clean.json', function(json){
     data = json 
     }
   );
@@ -289,5 +290,15 @@ function getLimits(){
   return _.max(potentialEdges);
 }
 
+// three.js controls
+//initalize toggle
+$('.ui.checkbox')
+  .checkbox();
 
+function rotateToggle(){
+  controls.autoRotate = !controls.autoRotate
+}
 
+$('.ui.checkbox').click(function(){
+  rotateToggle();
+});
