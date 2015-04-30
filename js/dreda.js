@@ -197,8 +197,6 @@ function fetchData(){
 
 function loadData(){
 
-  fetchData();
-
   dataLength =  _.size(_.values(data)[0]);
 
   for (var i=0; i < dataLength; i++){
@@ -246,17 +244,23 @@ function plotData(){
       pointGeometry.vertices.push(vertex);
       // assign colors
       pointColors[j] = new THREE.Color(colors[i]);
-      //pointColors[j].setHSL( ( vertex.x + 1000 ) / 2000, 0.5, 0.5 );
     }
     
     console.log(grouped[i].length + " points in cluster " + i)
     pointGeometry.colors = pointColors
 
     // create new point cloud
-    var pointCloudMaterial= new THREE.PointCloudMaterial({size: edge*pointToEdgeRatio, color: colors[i], vertexColors: THREE.VertexColors, alphaTest: 0.5, transparent: true, map: sprite});
-    
+    var pointCloudMaterial= new THREE.PointCloudMaterial({
+        size: edge*pointToEdgeRatio, 
+        color: colors[i], 
+        vertexColors: THREE.VertexColors, 
+        alphaTest: 0.5, 
+        transparent: true,
+        opacity: 0.8, 
+        map: sprite});
+
     // Use this to change the entire material 
-    //point_cloud_mesh.color.setHSL( 1.0, 0.2, 0.7 );
+    //pointCloudMaterial.color.setHSL( 3.0, 0.8, 0.8 );
 
     var pointCloud= new THREE.PointCloud(pointGeometry, pointCloudMaterial)
     scene.add(pointCloud)
@@ -265,18 +269,6 @@ function plotData(){
   }
   return true
 }
-
-function plot(){
-  setTimeout(function(){
-    plotData();
-  $('#loader').removeClass('ui active dimmer');
-  updateInfoBox();
-  $('#info-box').click();
-    
-  }, 1000);
-  $('#loader').addClass('ui active dimmer');
-}
-
 
 function getLimits(){
   // container for potential x-z grid size
@@ -290,15 +282,6 @@ function getLimits(){
   return _.max(potentialEdges);
 }
 
-// three.js controls
-//initalize toggle
-$('.ui.checkbox')
-  .checkbox();
-
 function rotateToggle(){
   controls.autoRotate = !controls.autoRotate
 }
-
-$('.ui.checkbox').click(function(){
-  rotateToggle();
-});

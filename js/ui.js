@@ -1,43 +1,102 @@
-//// modals ////
+//// //// //// //// modals //// //// //// //// 
+
+$('.ui.modal').modal({
+    allowMultiple: false
+  });
 
 function toggleModal(){
-  $('.ui.modal')
+  $('#secondModal')
+    .modal('attach events', '#firstModal .blue.button')
+  ;
+
+  $('#thirdModal')
+    .modal('attach events', '#secondModal .positive.button')
+  ;
+
+  //$('#fourthModal')
+  //  .modal('attach events', '#thirdModal .blue.button')
+  //;
+
+  $('#firstModal')
     .modal('show')
   ;
 }
 
-//// side bar ////
+//// //// //// //// drop box //// //// //// ////  
+
+var inputElement = document.getElementById("dropbox")
+inputElement.addEventListener("change", handleFiles, false);
+function handleFiles() {
+  var fileList = this.files; /* now you can work with the file list */
+}
+
+dropbox = document.getElementById("dropbox");
+dropbox.addEventListener("dragenter", dragenter, false);
+dropbox.addEventListener("dragover", dragover, false);
+dropbox.addEventListener("drop", drop, false);
+
+function dragenter(e) {
+  e.stopPropagation();
+  e.preventDefault();
+}
+
+function dragover(e) {
+  e.stopPropagation();
+  e.preventDefault();
+}
+
+function drop(e) {
+  e.stopPropagation();
+  e.preventDefault();
+
+  var dt = e.dataTransfer;
+  var files = dt.files;
+
+  handleFiles(files);
+}
+
+//// //// //// //// side bar //// //// //// //// 
 
 // click listener
 $('.content.icon').click(function(){
   $('.ui.sidebar').sidebar('toggle');
   });
 
-// add loader
-function plot(){
-  setTimeout(function(){
-    plotData();
-  $('#loader').removeClass('ui active dimmer');
-  }, 1);
+
+// These next two functions are unnecessary... however
+// I feel that even the slight glimpse of the loader
+// gives a polished look to the UI
+
+function hideAndLoad(){
+  $('.ui.sidebar').sidebar('hide');
+  $('.ui.modal').modal('hide');
   $('#loader').addClass('ui active dimmer');
 }
-
-// toggle sidebar first
-function togglePlot(){
+function plotExampleAndLoad(){
   setTimeout(function(){
-    plot();
-  }, 1);
-	$('.ui.sidebar').sidebar('toggle');
-  $('.ui.modal').modal('hide');
-  $('#info-box').toggleClass('hidden');
+    fetchData();
+    plotData();
+  $('#loader').removeClass('ui active dimmer');
+  updateInfoBox();
+  }, 200);
+
+  hideAndLoad();
+
 }
+
+// this is all that really needs to happen
+function plotExample(){
+  fetchData();
+  plotData();
+}
+
 
 // popups
 
 $('#side-explanation a').popup({position: 'right center'})
 
 
-//// info box ////
+//// //// //// //// info box //// //// //// //// 
 
 // aka glowing / pulsing effect
 $('.info.icon')
@@ -56,5 +115,13 @@ function updateInfoBox(){
   // number clusters
   $('#clusterSize').empty();
   $('#clusterSize').append(_.uniq(organized, Object.keys(data)[3]).length);
+  $('#info-box').toggle('hidden')
 }
 
+//initalize rotateToggle
+$('.ui.checkbox')
+  .checkbox();
+
+$('.ui.checkbox').click(function(){
+  rotateToggle();
+});
