@@ -29,6 +29,7 @@ function togglePlot(){
   }, 1);
 	$('.ui.sidebar').sidebar('toggle');
   $('.ui.modal').modal('hide');
+  $('#info-box').toggleClass('hidden');
 }
 
 // popups
