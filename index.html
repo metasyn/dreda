@@ -31,7 +31,7 @@
 
         <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
 
-        <div class="ui green button" onClick="togglePlot()">Plot Example</div>
+        <div class="ui green button" onClick="plotExampleAndLoad()">Plot Example</div>
         <div class="ui teal button" onClick="">Tutorial</div>
         <div class="ui blue button" onClick="toggleModal()">Upload</div>
 
@@ -116,8 +116,8 @@
   <i class="fixed big white info icon"></i>
 
 
-  <!-- MODAL -->
-  <div class="ui modal">
+  <!-- FIRST MODAL -->
+  <div class="ui modal" id="firstModal">
     <i class="close icon"></i>
     <div class="header">
       Using your own data
@@ -127,11 +127,66 @@
         <div class="ui header">Something About Uploading Your Own Data</div>
         <video src="./data/demo.webm" controls width="480" preload="none" controls></video>
         <p>Or maybe you just want to see an example?</p>
+        <p>Is your data in the right format to be plotted? </p>
       </div>
     </div>
     <div class="actions">
       <div class="ui black button" onClick="togglePlot()">
         Show me an example !
+      </div>
+      <div class="ui blue right labeled icon button">
+        Upload
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECOND MODAL -->
+  <div class="ui modal" id="secondModal">
+    <i class="close icon"></i>
+    <div class="header">
+      Using your own data
+    </div>
+    <div class="content"> 
+      <div class="description">
+        <div class="ui header">Are you sure your data is formatted correctly?</div>
+
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
+        Read More
+      </div>
+      <div class="ui positive right labeled icon button">
+        Let me upload !
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- THIRD MODAL -->
+  <div class="ui modal" id="thirdModal">
+    <i class="close icon"></i>
+    <div class="header">
+      Uploading your Data
+    </div>
+    <div class="content">
+      <div class="description">
+        <div class="ui header">File</div>
+      </div>
+      <div id="dropbox">
+
+
+        <div class="ui input">
+          <input type="file" name="rawData"></input>
+        </div>
+      </div>
+
+    </div>
+    <div class="actions">
+      <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
+        Read More
       </div>
       <div class="ui positive right labeled icon button">
         Let me upload !
