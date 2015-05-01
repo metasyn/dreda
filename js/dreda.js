@@ -197,6 +197,9 @@ function fetchData(){
 
 function loadData(){
 
+  // clear container
+  organized = [];
+
   dataLength =  _.size(_.values(data)[0]);
 
   for (var i=0; i < dataLength; i++){
@@ -220,7 +223,7 @@ function plotData(){
   init();
 
   var sprite = THREE.ImageUtils.loadTexture( "./data/disc.png" );
-  console.log("Data Loaded");
+  console.log("Initalized");
 
   // zip and group
   var keys = Object.keys(data)
@@ -229,7 +232,6 @@ function plotData(){
   
   for (var i=0; i<groupedSize; i++){
 
-    console.log("group  " + i);
     // create new point cloud material
     var pointGeometry = new THREE.Geometry();
     pointColors = [];
@@ -264,7 +266,6 @@ function plotData(){
 
     var pointCloud= new THREE.PointCloud(pointGeometry, pointCloudMaterial)
     scene.add(pointCloud)
-    console.log(_.size(grouped))
     console.log(colors[i])
   }
   return true

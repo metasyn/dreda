@@ -36,6 +36,7 @@ a > i {
 	right: 8px;
 	width: 200px;
 	z-index: 5;
+	padding: 0px 10px 0px 0px;
 }
 
 #side-center{
@@ -44,13 +45,24 @@ a > i {
 	padding-bottom: 15px;
 }
 
-#side-center > button {
+#side-center button {
 	display: inherit;
 	width: 200px;
 	width: 200px;
 	margin: 15px auto 0 auto;
 
 }
+
+
+#thirdModal i {
+	margin: auto;
+	display: inherit;
+}
+
+#thirdModal input {
+	display: none;
+}
+
 
 #rotateLabel {
 	color: rgba(255,255,255,.8);

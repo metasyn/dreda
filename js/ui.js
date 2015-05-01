@@ -22,38 +22,72 @@ function toggleModal(){
   ;
 }
 
-//// //// //// //// drop box //// //// //// ////  
+$('#thirdModal .massive.icon')
+  .transition('set looping')
+  .transition('pulse', '750ms');
 
-var inputElement = document.getElementById("dropbox")
-inputElement.addEventListener("change", handleFiles, false);
-function handleFiles() {
-  var fileList = this.files; /* now you can work with the file list */
+
+//// //// //// //// file upload //// //// //// ////  
+
+var userFile;
+var data;
+
+// listener
+$('#fileInput').change(function(){
+  userFile = this.files[0];
+  readFile(userFile);
+});
+
+function readFile(userFile){
+
+  if (userFile.type === 'application/json'){
+
+    // reading them files
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      data = JSON.parse(event.target.result);
+    }
+    reader.readAsText(userFile);
+
+    $('#thirdModal .positive.message').removeClass('hidden');
+    $('#thirdModal .positive.button').removeClass('disabled');
+  } else {
+    $('#thirdModal .negative.message').removeClass('hidden');
+  }
 }
 
-dropbox = document.getElementById("dropbox");
-dropbox.addEventListener("dragenter", dragenter, false);
-dropbox.addEventListener("dragover", dragover, false);
-dropbox.addEventListener("drop", drop, false);
+// file selector so we can hide ugly input
+var fileSelector = $('#fileSelector');
+var fileInput = $('#fileInput');
 
-function dragenter(e) {
-  e.stopPropagation();
+fileSelector.on('click', function(e){
+  if (fileInput) {
+    fileInput.click();
+  }
   e.preventDefault();
+});
+
+function userPlot(){
+  setTimeout(function(){
+    plotData();
+  $('#loader').removeClass('ui active dimmer');
+  updateInfoBox();
+  }, 200);
+
+  hideAndLoad();
 }
 
-function dragover(e) {
-  e.stopPropagation();
-  e.preventDefault();
-}
+$('#userPlotButton').click(function(){
 
-function drop(e) {
-  e.stopPropagation();
-  e.preventDefault();
+  // clear messages & and stuff
+  $('#thirdModal .positive.message').addClass('hidden');
+  $('#thirdModal .positive.button').addClass('disabled');
+  $('#thirdModal .negative.message').addClass('hidden');
 
-  var dt = e.dataTransfer;
-  var files = dt.files;
+  // hell yeah
+  userPlot();
+})
 
-  handleFiles(files);
-}
 
 //// //// //// //// side bar //// //// //// //// 
 
@@ -115,7 +149,7 @@ function updateInfoBox(){
   // number clusters
   $('#clusterSize').empty();
   $('#clusterSize').append(_.uniq(organized, Object.keys(data)[3]).length);
-  $('#info-box').toggle('hidden')
+  $('#info-box').removeClass('hidden');
 }
 
 //initalize rotateToggle

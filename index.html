@@ -142,7 +142,7 @@
   </div>
 
   <!-- SECOND MODAL -->
-  <div class="ui modal" id="secondModal">
+  <div class="ui small modal" id="secondModal">
     <i class="close icon"></i>
     <div class="header">
       Using your own data
@@ -166,30 +166,47 @@
 
 
   <!-- THIRD MODAL -->
-  <div class="ui modal" id="thirdModal">
+  <div class="ui small modal" id="thirdModal">
     <i class="close icon"></i>
     <div class="header">
       Uploading your Data
     </div>
     <div class="content">
-      <div class="description">
-        <div class="ui header">File</div>
-      </div>
-      <div id="dropbox">
 
-
-        <div class="ui input">
-          <input type="file" name="rawData"></input>
-        </div>
+    <form name="uploadForm">
+      <div class="ui input">
+        <input type="file" id="fileInput" accept="application/json"></input>
+        </input>
       </div>
+    </form>
+
+    <i class="ui massive folder open icon" id="fileSelector"></i>
+
+    <div class="ui positive message hidden">
+      <i class="close icon"></i>
+      <div class="header">
+        Your data has been uploaded !
+      </div>
+      <p>Click <strong>Plot Data</strong> to see what it looks like.</a>
+      </p>
+    </div>
+
+    <div class="ui negative message hidden">
+      <i class="close icon"></i>
+      <div class="header">
+        Are you sure that is valid JSON ?
+      </div>
+      <p>Try using a JSON validator like <a href="http://jsonlint.com/">JSONLint</a>
+      </p>
+    </div>
 
     </div>
     <div class="actions">
       <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
         Read More
       </div>
-      <div class="ui positive right labeled icon button">
-        Let me upload !
+      <div class="ui positive right labeled icon button disabled" id="userPlotButton">
+        Plot Data
         <i class="checkmark icon"></i>
       </div>
     </div>
