@@ -8,6 +8,7 @@
 
   <!--styles-->
   <link href="./css/stylish.css" rel="stylesheet" type="text/css">
+  <link href="./css/tomorrow-night.css" rel="stylesheet" type="text/css">
   <link href="./Semantic-UI-1.12.0/dist/semantic.min.css" rel="stylesheet" type="text/css">
   
 
@@ -19,6 +20,7 @@
 
   <script src="./lib/lodash.min.js"></script> 
   <script src="./Semantic-UI-1.12.0/dist/semantic.min.js"></script>
+  <script src="./lib/rainbow-custom.min.js"></script>
 </head>
 
 <body>
@@ -124,10 +126,39 @@
     </div>
     <div class="content"> 
       <div class="description">
-        <div class="ui header">Something About Uploading Your Own Data</div>
-        <video src="./data/demo.webm" controls width="480" preload="none" controls></video>
-        <p>Or maybe you just want to see an example?</p>
-        <p>Is your data in the right format to be plotted? </p>
+        <div class="ui header">Formatting your Data</div>
+        <p>For Dreda to visualize your data, you'll need to meet a few requirements:</p>
+        <ol>
+          <li>valid JSON</li>
+          <li>'index' style format</li>
+          <pre><code>
+            {
+              "x":
+              {
+                "0":117.0501353217,
+                "1":63.4789054268,
+                "2":-92.4110611211
+              },
+              "y":
+                {
+                  "0":-33.8277679817,
+                  "1":120.3959209587,
+                  "2":172.3790645372
+                },
+              "z":
+                {
+                "0":-17.441790351,
+                "1":-34.4737315608,
+                "2":-224.6172323059
+                },
+              "cid":
+                {
+                  "0":4.0,
+                  "1":1.0,
+                  "2":4.0
+                }
+            }
+          </code></pre>
       </div>
     </div>
     <div class="actions">
