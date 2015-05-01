@@ -126,21 +126,24 @@
     </div>
     <div class="content"> 
       <div class="description">
-        <div class="ui header">Formatting your Data</div>
+        <div class="ui header">Prereqs</div>
         <p>For Dreda to visualize your data, you'll need to meet a few requirements:</p>
         <ol>
           <li>valid JSON - maybe check with <a href="http://jsonlint.com/">JSONLint</a></li>
           <li>'index' style format output from a <a href="http://pandas.pydata.org">pandas</a> DataFrame.<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_json.html">to_json()</a></li>
         </ol>
 
+        <div class="ui header">Format</div>
         <p>
           Basically, the data is formatted as an <strong>object</strong> of <strong>objects</strong>. More specifically, we have three numerical values, and one categorical value that gets used as the coloring for the cluster. Within each object, we have key-value pairs. The key is the point-id (index value) and the value is, well, the value for that particular parent-object (a given dimension).
         </p>
 
+        <div class="ui header">Scaling</div>
         <p>
-          Dreda is already set up to obtain the scale of the data and calculate the size of the grids and points accordingly, so don't worry about scale. However, it may be worth considering <a href="http://en.wikipedia.org/wiki/Standard_score">standardizing</a> your data so it is displayed neatly across the origin.
+          Dreda is already set up to obtain the scale of the data and calculate the size of the grids and points accordingly, so don't worry about scale. However, it may be worth considering <a href="http://en.wikipedia.org/wiki/Standard_score">standardizing</a> your data so it is displayed neatly across the origin (maybe with <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler">sklearn?</a>).
         </p>
 
+        <div class="ui header">It done broke</div>
         <p>
           Lastly, I haven't written an elegant catch for badly formatted data. So right now if you try uploading something that doesn't work, feel free to check the console, see the error, and file an issue on <a href="http://github.com/metasyn/dreda">github</a>.
 
