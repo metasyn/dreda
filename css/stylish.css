@@ -14,6 +14,7 @@ a > i {
 	color: #000;
 }
 
+
 /* IDS */
 
 #data-canvas {
@@ -86,8 +87,8 @@ a > i {
 
 /* CLASSES */
 
-.ui.ribbon {
-	padding: 40px 0px 0px 60px;
+.btnLink {
+	color: #FFF;
 }
 
 .side{

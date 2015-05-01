@@ -1,4 +1,46 @@
 <!DOCTYPE html>
+
+<!--
+
+Welcome. UI stuff is in ui.js and Three.js stuff is in dreda.js (links at bottom).
+Source is at github.com/metasyn/dreda.
+
+Here's a Red panda, because.
+
+ydmmmmmddds+:/yhysooymNNmmmmNNmy//+ossysyyyysysysssysoossooo++++smms/:
+hdmmmmmmddhy+//oyso++/smNMMMMmo+oosyyyyyyyyysyyyyyyyssyssyyssooo+smNh+
+hdmmmmmmmmmmds+//oo++++++shmh++syyyhhhhhyyyyhyyhso/:.````.oyyoooosohNd
+dmmmddddmmmmmmho/:/+++////:----.---::/osyhhhho/.` ```.```.shysyssssoyN
+dd+---::/+syhdmdyo/::--..--::/:-.........-//.```-/+++:-..:yyyyyyyshhhm
+yy.```````````:os+-...-..--:/:----...-....-`..-/shhy+:-..+yyyyysssssos
++s/`..-/++/-.```-:.--.----:--::----.------:--:/oyhhyo/-./yyyhyyyyyyyso
++ss:--:+shhs/::--.--:/:--.---::-------:-:::-.-:/+oo++/--yhhhysyyhhhhyy
+/sso:--:+syyo/:::--:::::---.---.-::::-----------/++/:-.+hddddhhhhhhhyh
+++ooo:-:+ooo+::::::---:::--...----:::::----:--.-:os+:.`:shhhhhhhhhdhhh
+oshddy/-:/+o+:---:::::::::::--:://:---:/::-::-..-:oso/.-oyyyhhdhdhhhhh
+/:+syys:-/+ss:.-----:/:--:++/++/os/..:+o+++/:--.-:ohhyo/+oyhhhdddddddd
+s+/+sss:-/sds:---:+o++/:.-ohyo/+oso::/+/+s+:.....-/shhyyyssyyyhdmmmmmm
+o:.:oss+:ohdo---::+syooo+sss+/-.--:ohysoso-```..-:+syhyyhhyyhhhhddmmmm
+o:.-/oso+ymdo:-----:ossyyhs-.``````-/osyhhs:..``.-/syhhydmdhyhhhhddmNN
+s:-:/+ssshmms+:....:sddhs:..`.-:-`````-+hNNmo-.`.-/oyhhdmNmmhyhdddmmNN
++--++/+syhdmdo:..-:yNNNh+-``.+yhyo-```.:ymmmd+----/shddNNNNNmhhhmmmNNN
+-.:oo+/oyssdds:--:/hNMMms-..oNNNNNm:.../ydNNdo///shmmmNNNNNNNmdhmNNNMM
+--+ooo++o//ydho/+++ymNmdy/-:+dNMMmy+//oyhddddddmmNNNNMMMMMMNNNmddNNMMM
+-:/+ooo++//ohdmddhdddhhdmhhydmNNNmmmmddhdmmmmMMNNMMMMMMMMMMMNNNmdmNMMM
+/++++//+//:/smNNNNNddmmmmNNmmNNmdmdddmsymNNMNdNMMMMMMMMMMMMMMNNNmmNMMM
+ooooo++/:/oyhmMMMNNMMMMNMMMNddmysyysyyyNMMMMNNMMMMMMMMMMMMMMNNNNmmmNMM
+ooooooo+///oymNMNNMMMMMMMMMMMmhddmmNNmMMMMMMMMMMMMMMMMMMMMMMMMMNNNmNMM
+/oo+++++/++syhNMNMMMMMMMMMMMMMMNMMMMMMMMMMNMMMMMMMMMMMMMMMMMMNNNNmmNMM
+/+/////+oosyydNMMNMMMMMMMMMMMMMMMMMNNNNMMMNNNMMMMMMMMMMMMMMMMMMNmmmNNM
+///+oyhyso++ohNMMMMMMMMMMMMMMMMMMMMNdyhmNMMNmMMMMMMMMMMMMMMMMMNmhhdmNM
+ooosyhyo++//oyNMMMMMMMMMMMMMMMMMMMMNh/-:hNMMMMMMMMMMMMMMMMMMMNyooyhdNN
++++++osoo+//+smNMMMMMMMMMMMMMMMMMMMMM+::+hmNMMMMMMMMMMMMMMMNhs//+syhmm
+/+/++so+oo///+osmMMMMMMMMMMMMMMMMMMMMs:::+oyhmNNNNMMMMMMMMNys+::/syydm
+/oosso++++/////:omMMMMMMMMMMMMMMMMMMdy+::/yssyhdmNNNNNNNNMNs+o/::oysyd
+oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
++++ooooo+++///++::+ydNMMMMMMMMMNmmyo++s+.:sssyhdmmmmNNNNNNNmy+::-/sosh
+
+-->
 <html>
 <head>
   <title>dreda</title>
@@ -34,7 +76,7 @@
         <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
 
         <div class="ui green button" onClick="plotExampleAndLoad()">Plot Example</div>
-        <div class="ui teal button" onClick="">Tutorial</div>
+        <div class="ui teal button"><a href="http://metasyn.github.io/dreda/#tutorial" class="btnLink">Tutorial</a></div>
         <div class="ui blue button" onClick="toggleModal()">Upload</div>
 
       </div>
@@ -177,7 +219,7 @@
       
     </div>
     <div class="actions">
-      <div class="ui black button" onClick="togglePlot()">
+      <div class="ui black button" onClick="plotExampleAndLoad()">
         Show me an example !
       </div>
       <div class="ui blue right labeled icon button">
@@ -201,7 +243,7 @@
     </div>
     <div class="actions">
       <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
-        Read More
+        <a href="http://metasyn.github.io/dreda" class="btnLink">Read More</a>
       </div>
       <div class="ui positive right labeled icon button">
         Let me upload !
@@ -249,7 +291,7 @@
     </div>
     <div class="actions">
       <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
-        Read More
+        <a href="http://metasyn.github.io/dreda" class="btnLink">Read More</a>
       </div>
       <div class="ui positive right labeled icon button disabled" id="userPlotButton">
         Plot Data
