@@ -24,11 +24,6 @@
 
 <p>dimensionality reduced exploratory data analysis</p>
 
-<p>
-  
-<video src="demo.webm" width="640" preload controls></video>
-</p>
-
 <h1>
 <a id="what" class="anchor" href="#what" aria-hidden="true"><span class="octicon octicon-link"></span></a>What</h1>
 
@@ -45,9 +40,46 @@
 <p>In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration, and can be divided into feature selection and feature extraction.</p>
 </blockquote>
 
-<p>If you reduce your data down, say via <a href="http://en.wikipedia.org/wiki/Singular_value_decomposition">SVD</a> or <a href="http://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>, to three dimensions, you can visualize it with this tool. Currently Dreda supports 4 dimensions (x,y,z, and color). Color assignments are chosen randomly. </p>
+<p>
+So you start to make a document-term matrix. There might be hundreds of thousands of terms... a.k.a. dimensions. Even if you truncate to the top 10,000 most important terms, you're still stuck with completely un-plottable data. Dimensionality reduction is used in many scenarios to visualize high dimensional data.
+<ul>
+  <li>
+    <a href="http://datacratic.com/site/blog/visualizing-high-dimensional-data-browser-svd-t-sne-and-threejs">
+      visualizing user clustering / market segmentation
+    </a>
+  </li>
+  <li>
+    <a href="http://scitation.aip.org/content/aapm/journal/medphys/37/1/10.1118/1.3267037">
+      cancer research
+    </a>
+  </li>
+  <li>
+    <a href="http://bioinformatics.oxfordjournals.org/content/25/5/615">
+      bioinformatics
+    </a>
+  </li>
+  <li>
+    <a href="http://www.eeshyang.com/papers/Springer12tm.pdf">
+      topic modeling
+    </a>
+  </li>
+  <li>
+    <a href="http://arxiv.org/abs/1003.0628">
+      computational linguistics
+    </a>
+  </li>
+</ul>
 
-<p>I had been doing some visualizations in iPython and they left much to be desired. The data input here is just the ouput of a pandas data frame <code>to_json()</code> - a JSON object with an inner object for each column - index and value pairs in each inner object</p>
+
+</p>
+
+<p>
+  If you reduce your data down, say via <a href="http://en.wikipedia.org/wiki/Singular_value_decomposition">singular value decomposition</a> or <a href="http://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-distributed stochastic neighbor embedding</a> or <a href="http://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>, to three dimensions, you can visualize it with this tool. Currently Dreda supports 4 dimensions (x,y,z, and color). Color assignments are chosen randomly from a <a href="http://stanford.edu/~mwaskom/software/seaborn/">seaborn</a> <a href="http://www.husl-colors.org/">HUSL</a> color space (colors for <a href="http://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/">humans</a>).
+</p>
+
+<p>
+  I had been doing some visualizations in iPython and they left much to be desired. The data input here is just the ouput of a pandas data frame <code>to_json()</code> - a JSON object with an inner object for each column - index and value pairs in each inner object
+</p>
 
 <p>E.g.</p>
 
@@ -82,8 +114,13 @@
 <h1>
 <a id="how" class="anchor" href="#how" aria-hidden="true"><span class="octicon octicon-link"></span></a>How</h1>
 
-<p>Clone, run <code>python -m SimpleHTTPSever</code>, and open <code>localhost:8000</code> in your browser.<br>
-Open the console, and run the function <code>plot()</code>. </p>
+
+
+<p>
+  You can see it all running live at http://metasyn.pw/dreda
+  How ever, if you want to change things around, you might want to clone, run <code>python -m SimpleHTTPSever</code>, and open <code>localhost:8000</code> in your browser.
+</p>
+<br>
 
 <h2>
 <a id="authors" class="anchor" href="#authors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors</h2>
