@@ -174,6 +174,18 @@ canvas.width  = canvas.clientWidth;
   camera.updateProjectionMatrix();
 });
 
+
+function rotateToggle(){
+  controls.autoRotate = !controls.autoRotate
+}
+
+function resetCamera(){
+  camera.position.set(
+    edge * cameraXToEdgeRatio,
+    edge * cameraYToEdgeRatio, 
+    edge * cameraZToEdgeRatio);
+  camera.lookAt(scene.position);
+}
   
 ////////
 ////////
@@ -188,7 +200,7 @@ function fetchData(){
   //
   // TODO: Add .when / use deferred 
   $.ajaxSetup({'async': false})
-  $.getJSON('./data/dp_data.clean.json', function(json){
+  $.getJSON('./data/ted-talks.json', function(json){
     data = json 
     }
   );
@@ -283,6 +295,4 @@ function getLimits(){
   return _.max(potentialEdges);
 }
 
-function rotateToggle(){
-  controls.autoRotate = !controls.autoRotate
-}
+
