@@ -241,6 +241,11 @@ function plotData(){
   var keys = Object.keys(data)
   var grouped = _.groupBy(organized, keys[3]) // group by color
   var groupedSize = _.size(grouped);
+  var groupedKeys = Object.keys(grouped)
+
+  console.log(keys)
+  console.log(grouped)
+  console.log(groupedSize)
   
   for (var i=0; i<groupedSize; i++){
 
@@ -249,18 +254,18 @@ function plotData(){
     pointColors = [];
 
     // loop through points
-    for (var j=0; j < grouped[i].length; j++){
+    for (var j=0; j < grouped[groupedKeys[i]].length; j++){
 
       var vertex = new THREE.Vector3();
-      vertex.x = grouped[i][j][keys[0]]; 
-      vertex.y = grouped[i][j][keys[1]]; 
-      vertex.z = grouped[i][j][keys[2]];
+      vertex.x = grouped[groupedKeys[i]][j][keys[0]];
+      vertex.y = grouped[groupedKeys[i]][j][keys[1]]; 
+      vertex.z = grouped[groupedKeys[i]][j][keys[2]];
       pointGeometry.vertices.push(vertex);
       // assign colors
       pointColors[j] = new THREE.Color(colors[i]);
     }
     
-    console.log(grouped[i].length + " points in cluster " + i)
+    console.log(grouped[groupedKeys[i]].length + " points in cluster " + i)
     pointGeometry.colors = pointColors
 
     // create new point cloud
@@ -290,7 +295,9 @@ function getLimits(){
     // http://stackoverflow.com/questions/11142884
     var min = _.min(data[col]);
     var max = _.max(data[col]);
+    if (isFinite(min) && isFinite(max)) {
     potentialEdges.push(Math.abs(min), max);
+    }
   }
   return _.max(potentialEdges);
 }
