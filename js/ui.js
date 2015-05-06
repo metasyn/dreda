@@ -159,3 +159,7 @@ $('.ui.checkbox')
 $('.ui.checkbox').click(function(){
   rotateToggle();
 });
+
+$('.ui.undo').click(function(){
+  resetCamera();
+});

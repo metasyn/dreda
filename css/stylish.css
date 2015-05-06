@@ -38,7 +38,10 @@ a > i {
 	width: 200px;
 	z-index: 5;
 	padding: 0px 10px 0px 0px;
+	text-align: right;
+	margin: 0px 0px 0px auto;
 }
+
 
 #side-center{
 	margin: auto;
