@@ -242,10 +242,6 @@ function plotData(){
   var grouped = _.groupBy(organized, keys[3]) // group by color
   var groupedSize = _.size(grouped);
   var groupedKeys = Object.keys(grouped)
-
-  console.log(keys)
-  console.log(grouped)
-  console.log(groupedSize)
   
   for (var i=0; i<groupedSize; i++){
 
@@ -265,7 +261,8 @@ function plotData(){
       pointColors[j] = new THREE.Color(colors[i]);
     }
     
-    console.log(grouped[groupedKeys[i]].length + " points in cluster " + i)
+
+    console.log(grouped[groupedKeys[i]].length + " points in cluster " + groupedKeys[i])
     pointGeometry.colors = pointColors
 
     // create new point cloud
