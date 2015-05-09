@@ -7,12 +7,14 @@
 var scene, camera, renderer, controls, stats;
 var canvas = document.getElementById('data-canvas')
 
-// custom globals
+// custom globals for data
 var data;
 var organized = [];
+var grouped;
 var groupedSize;
+var groupedKeys;
 
-// colors (rainbow husl, 30 shades)
+// color options (rainbow husl, 30 shades)
 colors = _.shuffle( 
 ['#f79987',
  '#f7818a',
@@ -239,9 +241,9 @@ function plotData(){
 
   // zip and group
   var keys = Object.keys(data)
-  var grouped = _.groupBy(organized, keys[3]) // group by color
-  var groupedSize = _.size(grouped);
-  var groupedKeys = Object.keys(grouped)
+  grouped = _.groupBy(organized, keys[3]) // group by color
+  groupedSize = _.size(grouped);
+  groupedKeys = Object.keys(grouped)
   
   for (var i=0; i<groupedSize; i++){
 

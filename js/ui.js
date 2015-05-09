@@ -150,6 +150,14 @@ function updateInfoBox(){
   $('#clusterSize').empty();
   $('#clusterSize').append(_.uniq(organized, Object.keys(data)[3]).length);
   $('#info-box').removeClass('hidden');
+
+  // cluster info
+   $('#clusterInfo').empty();
+   for (i=0; i < groupedSize; i++){
+      $('#clusterInfo').append(
+        '<div style="color:'+colors[i]+';">Cluster ' + groupedKeys[i] + ' : ' + grouped[groupedKeys[i]].length + '</div>'
+        );
+  }
 }
 
 //initalize rotateToggle
@@ -163,3 +171,4 @@ $('.ui.checkbox').click(function(){
 $('.ui.undo').click(function(){
   resetCamera();
 });
+

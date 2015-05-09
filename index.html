@@ -132,7 +132,8 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
 
   <!-- RIGHT SIDE BAR -->
   <div id="info-box" class="hidden">
-    <div class="ui inverted statistics">
+
+    <div class="ui inverted segment">
       <div class="ui green inverted statistic">
         <div id="statsSize" class="value">
           0
@@ -141,7 +142,6 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
           Points Plotted
         </div>
       </div>
-
       <div class="ui blue inverted statistic">
         <div id="clusterSize" class="value">
           0
@@ -152,15 +152,18 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
       </div>
     </div>
 
-  <div class="ui inverted toggle checkbox">
-    <label id="rotateLabel">Rotate</label>
-    <input type="checkbox" name="rotateCheckbox" checked="checked" onClick="rotateToggle()">
-  </div>
+    <div class="ui divider"></div>
 
-  <div class="ui divider"></div>
+    <i class="ui white big undo icon"></i>
+    <div class="ui inverted toggle checkbox">
+      <label id="rotateLabel">Rotate</label>
+      <input type="checkbox" name="rotateCheckbox" checked="checked" onClick="rotateToggle()">
+    </div>
 
-  <i class="ui white big undo icon"></i>
+    <div class="ui divider"></div>
 
+    <div id="clusterInfo">
+    </div>
 
   </div>
 

@@ -35,7 +35,6 @@ a > i {
 	position: absolute;
 	top: 8px;
 	right: 8px;
-	width: 200px;
 	z-index: 5;
 	padding: 0px 10px 0px 0px;
 	text-align: right;
@@ -72,10 +71,10 @@ a > i {
 	margin: 0px 0px 0px auto;
 }
 
-
 #rotateLabel {
 	color: rgba(255,255,255,.8);
 }
+
 
 /* ICONS */
 
@@ -89,6 +88,10 @@ a > i {
 
 
 /* CLASSES */
+
+.infoLabel {
+	color: rgba(255,255,255,.8);
+}
 
 .btnLink {
 	color: #FFF;
