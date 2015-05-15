@@ -31,7 +31,7 @@ a > i {
 }
 
 #info-box {
-	opacity: 0%;
+	background-color: rgba(0,0,0,0);
 	position: absolute;
 	top: 8px;
 	right: 8px;
@@ -41,6 +41,9 @@ a > i {
 	margin: 0px 0px 0px auto;
 }
 
+#info-box .ui.segment {
+	background-color: inherit;
+}
 
 #side-center{
 	margin: auto;
@@ -88,6 +91,7 @@ a > i {
 
 
 /* CLASSES */
+
 
 .infoLabel {
 	color: rgba(255,255,255,.8);

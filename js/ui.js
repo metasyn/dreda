@@ -102,8 +102,8 @@ $('.content.icon').click(function(){
 // gives a polished look to the UI
 
 function hideAndLoad(){
-  $('.ui.sidebar').sidebar('hide');
   $('.ui.modal').modal('hide');
+  $('.ui.sidebar').sidebar('hide');
   $('#loader').addClass('ui active dimmer');
 }
 function plotExampleAndLoad(){
