@@ -76,14 +76,20 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
         <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
 
         <div class="ui green button" onClick="toggleExampleModal()">Plot Example</div>
-        <div class="ui teal button"><a href="http://metasyn.github.io/dreda/#tutorial" class="btnLink">Tutorial</a></div>
+        <div class="ui teal button" onClick="redirectToTutorial()">Tutorial</div>
         <div class="ui blue button" onClick="toggleUploadModal()">Upload</div>
 
       </div>
       
 
       <div id="side-explanation">
-        <p>Dreda is a tool for exploring clustered data that has been reduced to three numerical dimensions. 
+        <p>
+          Dreda is a tool for exploring data, primarily clustered data that has been reduced to three numerical dimensions.  However, that doesn't mean you can't explore more traditional data.
+        </p>
+        <p>
+          Try looking at some of the examples to get a feel for whats possible.
+        </p>
+        <p>
 
           Often, 
 
@@ -104,7 +110,7 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
           to turn high dimensional data into 3-dimensional data, a.k.a. data we can <strong>see</strong>!</p>
 
       <p>
-        Dreda takes a JSON object of objects as input - its set to accept the default 'index' ouput from a <a href="http://pandas.pydata.org">pandas</a> DataFrame.<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_json.html">to_json()</a> function. The reasoning here is that pandas will allow you to make DataFrames based on SQL queries, CSVs, <a href="http://en.wikipedia.org/wiki/Hierarchical_Data_Format">HDF</a>, STATA, excel, as well as JSON from <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.json.read_json.html">read_json()</a> in a variety of ways.
+        Dreda takes a JSON as input - really its just an object of objects though - its set to accept the default 'index' output from a <a href="http://pandas.pydata.org">pandas</a> DataFrame.<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_json.html">to_json()</a> function. The reasoning here is that pandas will allow you to make DataFrames based on SQL queries, CSVs, <a href="http://en.wikipedia.org/wiki/Hierarchical_Data_Format">HDF</a>, STATA, excel, as well as JSON from <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.json.read_json.html">read_json()</a> in a variety of ways.
       </p>
       <p>
         Read more about Pandas IO <a href="http://pandas.pydata.org/pandas-docs/stable/io.html">here</a>.
@@ -311,7 +317,7 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
   </div>
 
   <!-- EXAMPLE MODAL -->
-  <div class="ui small modal" id="exampleModal">
+  <div class="ui medium modal" id="exampleModal">
     <i class="close icon"></i>
     <div class="header">
       Examples

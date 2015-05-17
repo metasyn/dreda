@@ -165,6 +165,9 @@ function plotExample(){
   plotData();
 }
 
+function redirectToTutorial(){
+  window.location.replace('http://metasyn.github.io/dreda/#tutorial');
+}
 
 // popups
 
