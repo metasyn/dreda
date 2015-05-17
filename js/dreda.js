@@ -201,34 +201,13 @@ function fetchData(f){
   // we need the data to finish fetching file before loading
   //
   // TODO: Add .when / use deferred
-  switch(f) {
-      case 'ted':
-        $.ajaxSetup({'async': false})
-        $.getJSON('./data/ted-talks.json', function(json){
-          data = json 
-          }
-        );
-        console.log('Data Fetched');
-        break;
 
-      case 'tree':
-        $.ajaxSetup({'async': false})
-        $.getJSON('./data/trees.json', function(json){
-          data = json 
-          }
-        );
-        console.log('Data Fetched');
-        break;
-
-      case 'datacratic':
-        $.ajaxSetup({'async': false})
-        $.getJSON('./data/datacratic.json', function(json){
-          data = json 
-          }
-        );
-        console.log('Data Fetched');
-        break;
-  }
+    $.ajaxSetup({'async': false})
+    $.getJSON('./data/' + f + '.json', function(json){
+      data = json 
+      }
+    );
+    console.log('Data Fetched');
 }
 
 function loadData(){

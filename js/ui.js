@@ -183,7 +183,7 @@ function updateInfoBox(){
    $('#clusterInfo').empty();
    for (i=0; i < groupedSize; i++){
       $('#clusterInfo').append(
-        '<div style="color:'+colors[i]+';">Cluster ' + groupedKeys[i] + ' : ' + grouped[groupedKeys[i]].length + '</div>'
+        '<div style="color:'+colors[i]+';">' + groupedKeys[i] + ' : ' + grouped[groupedKeys[i]].length + '</div>'
         );
   }
 }

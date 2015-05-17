@@ -319,17 +319,24 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
     <div class="content"> 
       <div class="description">
 
-          <div class="ui secondary pointing three item menu" id="exampleMenu">
+          <div class="ui secondary pointing five menu" id="exampleMenu">
             <a class="item active" data-tab-category="ted">
               Ted Talks
             </a>
+            <a class="item" data-tab-category="iris">
+              Iris Flowers
+            </a>
             <a class="item" data-tab-category="tree">
-              Trees
+              SF Trees
+            </a>
+            <a class="item" data-tab-category="evictions">
+              SF Evictions
             </a>
             <a class="item" data-tab-category="datacratic">
               Datacratic Clusters
             </a>
           </div>
+
 
           <div class="ui relaxed items">
 
@@ -346,6 +353,27 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
                   </div>
                   <div class="description">
                     K-Means clustering on the TED Talks of 2013; the colors represent clusters, which loosely matches to topics. The x, y, and z values are the result of PCA and SVD on really long tf-idf vectors. 
+                  </div>
+                </div>
+              </div>
+
+              <div class="item iris tab-content">
+                <div class="ui small image">
+                  <img src="./img/iris.png">
+                </div>
+
+                <div class="content">
+                  <a class="header">Iris Flower</a>
+                  <div class="meta">
+                    <a>1936 : </a>
+                    <a>150 Samples</a>
+                  </div>
+                  <div class="description">
+                    K-Means clustering on the infamous <a href="http://en.wikipedia.org/wiki/Iris_flower_data_set">Iris flower data set.</a> The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. The data here is just being clustered on the first three: sepal length, sepal width, and petal length. The colors, as you would expect, represent one of the three species. Please compare to <a href="http://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_Flowers_Clustering_kMeans.svg"> this type of ugliness</a>.
+                    
+                    <small>
+                      Picture from <a href="http://blog.kaggle.com/wp-content/uploads/2015/04/iris_petal_sepal.png">here</a>.
+                    </small>
                   </div>
                 </div>
               </div>
@@ -366,6 +394,22 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
                 </div>
               </div>
 
+              <div class="item evictions tab-content">
+                <div class="ui small image">
+                  <img src="./img/sfopendata.png">
+                </div>
+                <div class="content">
+                  <a class="header">SF Evictions</a>
+                  <div class="meta">
+                    <a>1997 - 2015 : </a>
+                    <a>32,623 Evictions</a>
+                  </div>
+                  <div class="description">
+                  Eviction data from <a href='datasf.org'>DataSF.org</a>. The colors represent different eviction reasons. The x and y are latitude and longitude, whereas z is days-since eviction filing. The easy way to get oriented is by finding golden gate park (the big blank rectangle).
+                  </div>  
+                </div>
+              </div>
+
               <div class="item datacratic tab-content">
                 <div class="ui small image">
                   <img src="./img/datacratic.png">
@@ -381,9 +425,8 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
                   </div>  
                 </div>
               </div>
-            </div>
-        
 
+            </div>
         </div>
      </div>
     <div class="actions">
