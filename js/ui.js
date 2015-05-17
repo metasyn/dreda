@@ -4,7 +4,7 @@ $('.ui.modal').modal({
     allowMultiple: false
   });
 
-function toggleModal(){
+function toggleUploadModal(){
   $('#secondModal')
     .modal('attach events', '#firstModal .blue.button')
   ;
@@ -25,6 +25,33 @@ function toggleModal(){
 $('#thirdModal .massive.icon')
   .transition('set looping')
   .transition('pulse', '750ms');
+
+function toggleExampleModal(){
+  $('#exampleModal')
+    .modal('show');
+}
+
+$('.ted').show();
+
+
+$('#exampleMenu a.item')
+  .on('click', function() {
+
+    currentTab = $('.item.active')[0].getAttribute('data-tab-category')
+    $('.' + currentTab).hide();
+
+    $(this)
+      .addClass('active')
+      .closest('.ui.menu')
+      .find('.item')
+        .not($(this))
+        .removeClass('active');
+
+    selection = this.getAttribute('data-tab-category');
+
+    $('.' + selection).show();
+  });
+;
 
 
 //// //// //// //// file upload //// //// //// ////  
@@ -108,14 +135,15 @@ function hideAndLoad(){
 }
 function plotExampleAndLoad(){
   setTimeout(function(){
-    fetchData();
+    fetchData(
+      $('#exampleModal .active')[0].getAttribute('data-tab-category')
+      );
     plotData();
   $('#loader').removeClass('ui active dimmer');
   updateInfoBox();
   }, 200);
 
   hideAndLoad();
-
 }
 
 // this is all that really needs to happen

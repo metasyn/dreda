@@ -195,18 +195,40 @@ function resetCamera(){
 ///////
 ///////
 
-function fetchData(){
+function fetchData(f){
   // get the data
   // although async: false generates a deprecated warning,
   // we need the data to finish fetching file before loading
   //
-  // TODO: Add .when / use deferred 
-  $.ajaxSetup({'async': false})
-  $.getJSON('./data/ted-talks.json', function(json){
-    data = json 
-    }
-  );
-  console.log('Data Fetched');
+  // TODO: Add .when / use deferred
+  switch(f) {
+      case 'ted':
+        $.ajaxSetup({'async': false})
+        $.getJSON('./data/ted-talks.json', function(json){
+          data = json 
+          }
+        );
+        console.log('Data Fetched');
+        break;
+
+      case 'tree':
+        $.ajaxSetup({'async': false})
+        $.getJSON('./data/trees.json', function(json){
+          data = json 
+          }
+        );
+        console.log('Data Fetched');
+        break;
+
+      case 'datacratic':
+        $.ajaxSetup({'async': false})
+        $.getJSON('./data/datacratic.json', function(json){
+          data = json 
+          }
+        );
+        console.log('Data Fetched');
+        break;
+  }
 }
 
 function loadData(){

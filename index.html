@@ -75,9 +75,9 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
 
         <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
 
-        <div class="ui green button" onClick="plotExampleAndLoad()">Plot Example</div>
+        <div class="ui green button" onClick="toggleExampleModal()">Plot Example</div>
         <div class="ui teal button"><a href="http://metasyn.github.io/dreda/#tutorial" class="btnLink">Tutorial</a></div>
-        <div class="ui blue button" onClick="toggleModal()">Upload</div>
+        <div class="ui blue button" onClick="toggleUploadModal()">Upload</div>
 
       </div>
       
@@ -306,6 +306,93 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
       <div class="ui positive right labeled icon button disabled" id="userPlotButton">
         Plot Data
         <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMPLE MODAL -->
+  <div class="ui small modal" id="exampleModal">
+    <i class="close icon"></i>
+    <div class="header">
+      Examples
+    </div>
+    <div class="content"> 
+      <div class="description">
+
+          <div class="ui secondary pointing three item menu" id="exampleMenu">
+            <a class="item active" data-tab-category="ted">
+              Ted Talks
+            </a>
+            <a class="item" data-tab-category="tree">
+              Trees
+            </a>
+            <a class="item" data-tab-category="datacratic">
+              Datacratic Clusters
+            </a>
+          </div>
+
+          <div class="ui relaxed items">
+
+              <div class="item ted tab-content">
+                <div class="ui small image">
+                  <img src="./img/ted.png">
+                </div>
+
+                <div class="content">
+                  <a class="header">TED Talks</a>
+                  <div class="meta">
+                    <a>2013 : </a>
+                    <a>1169 Talks</a>
+                  </div>
+                  <div class="description">
+                    K-Means clustering on the TED Talks of 2013; the colors represent clusters, which loosely matches to topics. The x, y, and z values are the result of PCA and SVD on really long tf-idf vectors. 
+                  </div>
+                </div>
+              </div>
+            
+              <div class="item tree tab-content">
+                <div class="ui small image">
+                  <img src="./img/sfopendata.png">
+                </div>
+                <div class="content">
+                  <a class="header">SF Trees</a>
+                  <div class="meta">
+                    <a>1955 - Present : </a>
+                    <a>57436 Trees in San Francisco</a>
+                  </div>
+                  <div class="description">
+                    Tree data from <a href='datasf.org'>DataSF.org</a>. The colors represent different legal statuses. The x and y are latitude and longitude and z is the age of the tree. The map is flipped on its side - look for gold gate park (a big blank rectangle) or market street to get oriented.
+                  </div>
+                </div>
+              </div>
+
+              <div class="item datacratic tab-content">
+                <div class="ui small image">
+                  <img src="./img/datacratic.png">
+                </div>
+                <div class="content">
+                  <a class="header">Datacratic's User Clusters</a>
+                  <div class="meta">
+                    <a>07/15/2014 : </a>
+                    <a>10,000 Users</a>
+                  </div>
+                  <div class="description">
+                  User clusters from datacratic's post <a href="http://datacratic.com/site/blog/visualizing-high-dimensional-data-browser-svd-t-sne-and-threejs">here</a>
+                  </div>  
+                </div>
+              </div>
+            </div>
+        
+
+        </div>
+     </div>
+    <div class="actions">
+      <div class="ui black button" onClick="$('.ui.modal').modal('hide')">
+        <a href="http://metasyn.github.io/dreda" class="btnLink">Read More</a>
+      </div>
+      <div class="ui positive right labeled icon button" onClick="plotExampleAndLoad()">
+        Show Me!
+        <i class="right chevron icon"></i>
       </div>
     </div>
   </div>

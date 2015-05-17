@@ -78,6 +78,14 @@ a > i {
 	color: rgba(255,255,255,.8);
 }
 
+#exampleModal .tab-content {
+	display: none;
+}
+
+#exampleModal .ui.image {
+	float: left;
+}
+
 
 /* ICONS */
 
