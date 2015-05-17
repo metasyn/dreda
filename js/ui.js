@@ -1,3 +1,18 @@
+//// //// //// //// initalizations //// //// //// //// 
+
+// sidebar
+
+$('.ui.sidebar').sidebar('toggle');
+
+// modals
+
+$('.ted').show();
+
+// info
+
+$('#info-box').toggleClass('hidden');
+
+
 //// //// //// //// modals //// //// //// //// 
 
 $('.ui.modal').modal({
@@ -30,8 +45,6 @@ function toggleExampleModal(){
   $('#exampleModal')
     .modal('show');
 }
-
-$('.ted').show();
 
 
 $('#exampleMenu a.item')
