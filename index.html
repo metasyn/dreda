@@ -198,7 +198,22 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
 
         <div class="ui header">Scaling</div>
         <p>
-          Dreda is already set up to obtain the scale of the data and calculate the size of the grids and points accordingly, so don't worry about scale. However, it may be worth considering <a href="http://en.wikipedia.org/wiki/Standard_score">standardizing</a> your data so it is displayed neatly across the origin (maybe with <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler">sklearn?</a>).
+          Dreda is already set up to obtain the scale of the data and calculate the scale of the axes. But as it stands, its just checking the max of one dimension and putting that as the max for all of them. So you probably want to do some scaling. Consider <a href="http://en.wikipedia.org/wiki/Standard_score">standardizing</a> your data so it is displayed neatly across the origin (maybe with <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler">sklearn?</a>), e.g.:
+
+<pre data-language="python">
+  import pandas as pd
+  from sklearn import preprocessing
+
+  data = pd.read_csv('foobar.csv')
+
+  # only need to scale numerical values
+  scaled = pd.DataFrame( \\
+      preprocessing.scale( \\
+          data[['x', 'y', 'z']])
+          
+  scaled['cid'] = data.cid
+  scaled.to_json('data_for_dreda.json')
+</pre>
         </p>
 
         <div class="ui header">It done broke</div>
