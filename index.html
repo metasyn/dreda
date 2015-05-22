@@ -209,8 +209,8 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
   # only need to scale numerical values
   scaled = pd.DataFrame( \\
       preprocessing.scale( \\
-          data[['x', 'y', 'z']])
-          
+          data[['x', 'y', 'z']]))
+
   scaled['cid'] = data.cid
   scaled.to_json('data_for_dreda.json')
 </pre>
