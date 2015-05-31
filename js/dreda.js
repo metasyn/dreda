@@ -101,7 +101,7 @@ function init(){
   //document.getElementById('viz').appendChild(renderer.domElement);
 
   // controls
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, document, renderer.domElement);
   controls.autoRotate = true;
 
   // stats
