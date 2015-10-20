@@ -76,7 +76,7 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
         <h2><u>d</u>imensionality <u>r</u>educed <u>e</u>xploratory <u>d</u>ata <u>a</u>nalysis</h2>
 
         <div class="ui green button" onClick="toggleExampleModal()">Plot Example</div>
-        <div class="ui teal button" onClick="redirectToTutorial()">Tutorial</div>
+        <div class="ui teal button" onClick="toggleExplanationModal()">Tutorial</div>
         <div class="ui blue button" onClick="toggleUploadModal()">Upload</div>
 
       </div>
@@ -176,8 +176,8 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
   <i class="fixed big white info icon"></i>
 
 
-  <!-- FIRST MODAL -->
-  <div class="ui modal" id="firstModal">
+  <!-- EXPLANATION MODAL -->
+  <div class="ui modal" id="explanationModal">
     <i class="close icon"></i>
     <div class="header">
       Using your own data
@@ -250,42 +250,23 @@ oysooooo+o+///+//odNMMMMMMMMMMMMMMNhysy+:+yssyddmmmmNNNNNMNh::/::+yssh
       
     </div>
     <div class="actions">
+      <div class="ui blue button" onClick="redirectToTutorial()">
+        Read More
+      </div>
       <div class="ui black button" onClick="toggleExampleModal()">
         Show me an example !
       </div>
-      <div class="ui blue right labeled icon button">
+      <div class="ui positive right labeled icon button">
         Upload
         <i class="checkmark icon"></i>
       </div>
     </div>
   </div>
 
-  <!-- SECOND MODAL -->
-  <div class="ui small modal" id="secondModal">
-    <i class="close icon"></i>
-    <div class="header">
-      Using your own data
-    </div>
-    <div class="content"> 
-      <div class="description">
-        <div class="ui header">Are you sure your data is formatted correctly?</div>
-
-      </div>
-    </div>
-    <div class="actions">
-      <div class="ui black button" onClick="redirectToTutorial()">
-        Read More
-      </div>
-      <div class="ui positive right labeled icon button">
-        Let me upload !
-        <i class="checkmark icon"></i>
-      </div>
-    </div>
-  </div>
 
 
-  <!-- THIRD MODAL -->
-  <div class="ui small modal" id="thirdModal">
+  <!-- UPLOAD MODAL -->
+  <div class="ui small modal" id="uploadModal">
     <i class="close icon"></i>
     <div class="header">
       Uploading your Data

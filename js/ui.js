@@ -19,25 +19,23 @@ $('.ui.modal').modal({
     allowMultiple: false
   });
 
-function toggleUploadModal(){
-  $('#secondModal')
-    .modal('attach events', '#firstModal .blue.button')
+function toggleExplanationModal(){
+  $('#uploadModal')
+    .modal('attach events', '#explanationModal .positive.button')
   ;
 
-  $('#thirdModal')
-    .modal('attach events', '#secondModal .positive.button')
-  ;
-
-  //$('#fourthModal')
-  //  .modal('attach events', '#thirdModal .blue.button')
-  //;
-
-  $('#firstModal')
+  $('#explanationModal')
     .modal('show')
   ;
 }
 
-$('#thirdModal .massive.icon')
+function toggleUploadModal(){
+  $('#uploadModal')
+    .modal('show')
+  ;
+}
+
+$('#uploadModal .massive.icon')
   .transition('set looping')
   .transition('pulse', '750ms');
 
@@ -89,10 +87,10 @@ function readFile(userFile){
     }
     reader.readAsText(userFile);
 
-    $('#thirdModal .positive.message').removeClass('hidden');
-    $('#thirdModal .positive.button').removeClass('disabled');
+    $('#uploadModal .positive.message').removeClass('hidden');
+    $('#uploadModal .positive.button').removeClass('disabled');
   } else {
-    $('#thirdModal .negative.message').removeClass('hidden');
+    $('#uploadModal .negative.message').removeClass('hidden');
   }
 }
 
@@ -120,9 +118,9 @@ function userPlot(){
 $('#userPlotButton').click(function(){
 
   // clear messages & and stuff
-  $('#thirdModal .positive.message').addClass('hidden');
-  $('#thirdModal .positive.button').addClass('disabled');
-  $('#thirdModal .negative.message').addClass('hidden');
+  $('#uploadModal .positive.message').addClass('hidden');
+  $('#uploadModal .positive.button').addClass('disabled');
+  $('#uploadModal .negative.message').addClass('hidden');
 
   // hell yeah
   userPlot();

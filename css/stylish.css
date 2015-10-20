@@ -60,12 +60,12 @@ a > i {
 }
 
 
-#thirdModal i {
+#uploadModal i {
 	margin: auto;
 	display: inherit;
 }
 
-#thirdModal input {
+#uploadModal input {
 	display: none;
 }
 
