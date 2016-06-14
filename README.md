@@ -56,4 +56,5 @@ Open index.html and click "Plot Data".
 * Xander Johnson
 
 ## License
+WTFPL
 
